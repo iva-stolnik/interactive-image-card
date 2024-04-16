@@ -1,5 +1,5 @@
 
-# custom:interactive-image-card for Home Assistant
+# custom:interactive-image-card for Home Assistant lovelace
 
 This is a custom interactive image card for Home Assistant lovelace dashboard with support for image upload, view and interactive areas creation
 
@@ -13,6 +13,14 @@ This is a custom interactive image card for Home Assistant lovelace dashboard wi
 
 
 ## NOTES
+* ## this is still in development phase!!! but feel free to try it 
+  * copy code from **/src/** to **/config/www/your-directory** 
+  * add resource to dashboard 
+    ```
+    /local/your-directory/interactive-image-maker.js
+    ```
+  * add interactive-image-card to dashboard 
+* #this is still in testing!!! but feel free to copy code in /src/ to /contig/local/ and add resource to 
 * url can be added manually, but if no url is specified, upload input will be shown
 * image will be uploaded to /config/image/ directory
     * after uploading is complete, img url will be automatically saved to card YAML 
