@@ -3,39 +3,45 @@
 
 **custom:interactive-image-card** is a custom card for Home Assistant lovelace dashboard with support for image upload, view and interactive areas creation
 
-# FEATURES
-* UPLOAD or LINK EXTERNAL image
-* use entity state or attribute for DYNAMIC VIEW STREAMING 
-* use card to show SIMPLE or INTERACTIVE image
-* interactive image maker available when card has config --> editable: true
-  * add image, entity, draw interactive clickable areas to call services when clicked
-  * images and interactive areas are scalable and resizable
-  * interactive areas can be toggled to become visible on main view of card
-  * maker mode 
-    * existing tab - specific areas can be toggled
-    * add new tab - add action name, entity_id, service which will be called and draw interactive area on image in order to save new area
 
 
-
-## NOTES
-* ## this is still in development phase!!! but feel free to try it 
+# interactive maker is still in development phase!!! but feel free to try it 
   * copy code from **/src/** to **/config/www/your-directory** 
   * add resource to dashboard 
     ```
     /local/your-directory/interactive-image-maker.js
     ```
   * add interactive-image-card to dashboard 
-* url can be added manually, but if no url is specified, upload input will be shown
-* image will be uploaded to /config/image/ directory
-    * after uploading is complete, img url will be automatically saved to card YAML 
-    * notification to refresh dashboard will be shown
-* multiple cards can share the same label and all cards with the same label on current dashboard (all views included) will be updated with newly created actions
-    * cards with the same label should always have the same url in order for this to work
-    * cards can share url and have different label, in this case new actions wont added to other cards with same url
-    * when deleting card or url in card YAML, image will be deleted from /config/image/ if no other card in the same dashboard (all views included) shares the same label
-* actions can only be removed for a specific card in its own card YAML
-* each card can have different size and all interactive areas will be scaled up, resized and reusable within the same dashboard (all views included)
-* interactive-image-card should be used on its own as independent card, cards like grid that can contain multiple cards are currently not supported and various issues might occur
+  * YAML editing works good
+
+
+
+# FEATURES
+* UPLOAD or LINK EXTERNAL image
+* Use entity state or attribute for DYNAMIC VIEW STREAMING 
+* Use card to show SIMPLE or INTERACTIVE image
+* Interactive image maker available when card has config --> editable: true
+  * Add image, entity, draw interactive clickable areas to call services when clicked
+  * Images and interactive areas are scalable and resizable
+  * Interactive areas can be toggled to become visible on main view of card
+  * Maker mode 
+    * Existing tab - specific areas can be toggled
+    * Add new tab - add action name, entity_id, service which will be called and draw interactive area on image in order to save new area
+
+
+
+## NOTES
+* Url can be added manually, but if no url is specified, upload input will be shown
+* Image will be uploaded to /config/image/ directory
+    * After uploading is complete, img url will be automatically saved to card YAML 
+    * Notification to refresh dashboard will be shown
+* Multiple cards can share the same label and all cards with the same label on current dashboard (all views included) will be updated with newly created actions
+    * Cards with the same label should always have the same url in order for this to work
+    * Cards can share url and have different label, in this case new actions wont added to other cards with same url
+    * When deleting card or url in card YAML, image will be deleted from /config/image/ if no other card in the same dashboard (all views included) shares the same label
+* Actions can only be removed for a specific card in its own card YAML
+* Each card can have different size and all interactive areas will be scaled up, resized and reusable within the same dashboard (all views included)
+* Interactive-image-card should be used on its own as independent card, cards like grid that can contain multiple cards are currently not supported and various issues might occur
 
 
 
@@ -44,7 +50,7 @@
 type: custom:interactive-image-card
 label: Living room
 
-// optionaly add editable prop right away to gain access to interactive image maker
+// optionally add editable prop right away to gain access to interactive image maker
 // so there is no need to reconfigure card manually later on
 editable: true
 ```
@@ -194,4 +200,3 @@ interactive_areas:
       distance: 0.5
 
 ```
-
