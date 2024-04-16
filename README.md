@@ -1,5 +1,5 @@
 
-# custom:interactive-image-card 
+# custom:interactive-image-card for Home Assistant
 
 This is a custom interactive image card for Home Assistant lovelace dashboard with support for image upload, view and interactive areas creation
 
