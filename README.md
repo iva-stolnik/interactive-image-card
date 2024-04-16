@@ -1,15 +1,20 @@
 
-# custom:interactive-image-card for Home Assistant lovelace
+# Custom Interactive Image Card for Home Assistant Lovelace
 
-This is a custom interactive image card for Home Assistant lovelace dashboard with support for image upload, view and interactive areas creation
+**custom:interactive-image-card** is a custom card for Home Assistant lovelace dashboard with support for image upload, view and interactive areas creation
 
 # FEATURES
 * UPLOAD or LINK EXTERNAL image
 * use entity state or attribute for DYNAMIC VIEW STREAMING 
 * use card to show SIMPLE or INTERACTIVE image
-* interactive image maker 
-  * add entity, interactive clickable areas and call services on image
+* interactive image maker available when card has config --> editable: true
+  * add image, entity, draw interactive clickable areas to call services when clicked
   * images and interactive areas are scalable and resizable
+  * interactive areas can be toggled to become visible on main view of card
+  * maker mode 
+    * existing tab - specific areas can be toggled
+    * add new tab - add action name, entity_id, service which will be called and draw interactive area on image in order to save new area
+
 
 
 ## NOTES
@@ -147,7 +152,7 @@ interactive_areas:
 ### camera stream with interactive area
 ```
 // service and service data are editable only in YAML for this kind of card 
-// points can be added with any ohter entity and service and updated manually later on
+// points can be added with any other entity and service and updated manually later on
 type: custom:interactive-image-card
 label: camera 
 editable: true
