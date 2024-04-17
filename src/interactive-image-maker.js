@@ -311,7 +311,10 @@ class InteractiveImage extends LitElement {
             {
                 this.height = el.clientHeight
             }
-
+            else if(el && el.height)
+            {
+                this.height = el.height
+            }
 
             this.deleteDrawing();
             this.toggleCanvas(false)
@@ -343,9 +346,14 @@ class InteractiveImage extends LitElement {
             {
                 el = this.shadowRoot.querySelector('hui-image');
             }
+
             if(el && el.clientHeight)
             {
                 this.height = el.clientHeight
+            }
+            else if(el && el.height)
+            {
+                this.height = el.height
             }
         }
     }
@@ -491,7 +499,18 @@ class InteractiveImage extends LitElement {
             this.width = el.offsetWidth - 20;
             this.config.scale = Number(this.width) / 300;
         }
-        this.height = this.config.stream ? this.width/(16/9) : e.originalTarget.clientHeight   
+
+        if (this.config.stream )
+        {
+            this.height = this.width/(16/9) 
+        }
+        else if (e.originalTarget && e.originalTarget.clientHeight)
+        {
+            this.height = e.originalTarget.clientHeight   
+        }
+        else {
+            this.height = e.target.clientHeight   
+        }
     }
 
     callActions(dataIn) {
