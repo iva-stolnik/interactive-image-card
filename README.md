@@ -6,13 +6,13 @@
 
 
 # interactive maker is still in development phase!!! but feel free to try it 
+  * add through HACS or, 
   * copy code from **/src/** to **/config/www/your-directory** 
   * add resource to dashboard 
     ```
     /local/your-directory/main.js
     ```
   * add interactive-image-card to dashboard 
-  * YAML editing works good
 
 ## CARD EXAMPLE IN LOVELACE DASHBOARD
 ![Capture8](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/19e7713a-d995-4c05-b6b9-ee76614d8384)
