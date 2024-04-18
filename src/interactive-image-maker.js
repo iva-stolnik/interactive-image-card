@@ -494,7 +494,7 @@ class InteractiveImage extends LitElement {
     getImageHeight(e) {
         const el = this.shadowRoot.querySelector('ha-card');
 
-        if (this.width > el.offsetWidth)
+        if (el.offsetWidth && this.width > el.offsetWidth)
         {
             this.width = el.offsetWidth - 20;
             this.config.scale = Number(this.width) / 300;
@@ -544,7 +544,6 @@ class InteractiveImage extends LitElement {
         {
             const domain = this.selectedEntity.split('.')[0];
             if(!this.hass.services[domain]) return;
-            const services = Object.keys(this.hass.services[domain])
 
             if(!this.selectedEntity 
                 || Object.keys(this.hass.states).indexOf(this.selectedEntity) === -1
@@ -556,7 +555,7 @@ class InteractiveImage extends LitElement {
             }
 
             data = {
-                action: this.selectedAction,
+                service: this.selectedAction,
                 entity_id: this.selectedEntity,
             }
         }
