@@ -14,9 +14,10 @@
   * add interactive-image-card to dashboard 
   * YAML editing works good
 
+## CARD EXAMPLE IN LOVELACE DASHBOARD
+![Capture8](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/19e7713a-d995-4c05-b6b9-ee76614d8384)
 
-
-# FEATURES
+## FEATURES
 * UPLOAD or LINK EXTERNAL image
 * Use entity state or attribute for DYNAMIC VIEW STREAMING 
 * Use card to show SIMPLE or INTERACTIVE image
@@ -43,23 +44,28 @@
 * Each card can have different size and all interactive areas will be scaled up, resized and reusable within the same dashboard (all views included)
 * Interactive-image-card should be used on its own as independent card, cards like grid that can contain multiple cards are currently not supported and various issues might occur
 
+## OPTIONS
 
+| Name              | Type    | Requirement  | Default             | Description                                 |
+| ----------------- | ------- | ------------ | ------------------- | ------------------------------------------- |
+| type              | string  | Required |                     | custom:interactive-image-card
+| label             | string  | Required |                     | card label
+| editable          | boolean | Optional |                     | when enabled interactive editor will be accessible
+| url               | string  | Optional |                     | image url 
+| entity_state      | string  | Optional |                     | entity_id
+| stream_source     | string  | Optional |                     | entity_id (not tested)
+| still_image_url   | string  | Optional |                     | entity_id (not tested)
+| entity_picture    | string  | Optional |                     | entity_id
+| stream            | boolean | Optional |                     | add when streaming camera with entity_picture 
+| size              | string  | Optional |  300                | image width in px
+| use_vibration     | boolean | Optional |                     | vibration feedback when interactive area is clicked
+| interactive-areas | list    | Optional |                     | list of areas on the image that trigger specified actions. Each area includes properties like `name`, `entity_id`, `points`, `service`, `confirm_service` and `service_data` |
 
-## Required minimal YAML configuration
-```
-type: custom:interactive-image-card
-label: Living room
-
-// optionally add editable prop right away to gain access to interactive image maker
-// so there is no need to reconfigure card manually later on
-editable: true
-```
-
-## SOURCE YAML configuration
+## SOURCE YAML CONFIGURATIN
 If none of these sources is added to card YAML, upload button will be shown
 ```
 // url - manual setup or selfpopulated when uploading image
-url: /api/image/serve/6c4545bfb376ad54ba9a163267edc8f4/512x512
+url: /api/image/serve/6c47edc8f4545bfb376ad54ba9a16326/512x512
 
 // url is fetched from entity.state
 entity_state: entity_id
@@ -79,9 +85,13 @@ stream_source: entity_id
 still_image_url: entity_id 
 ```
 
-## Optional YAML configuration
+## ADDITIONAL OPTIONS INFO
 
 ```
+// optionally add editable prop right away to gain access to interactive image maker
+// so there is no need to reconfigure card manually later on
+editable: true
+
 // image width in px, default is 300px
 size: 400 
 
@@ -95,35 +105,36 @@ use_vibration: true/false
 
 // points are selfpopulated when using interactive editor to create interactive area, can be added/adjusted manually in YAML 
 interactive-areas:                                                  
-  - name: toggle office light
-    entity_id: light.wl_office_1
-    points: 0,0, 100,0, 100,100, 0,100, 0,0
-    service: toggle                   
-    confirm_service: true/false // confirm modal for sensitive actions
-    service_data: // supported, editable only in card YAML
+  - name: toggle office light                // required
+    entity_id: light.wl_office_1             // required
+    points: 0,0, 100,0, 100,100, 0,100, 0,0  // required
+    service: toggle                          // required   
+    confirm_service: true                    // optional, confirm modal for sensitive actions
+    service_data: any                        // optional, editable only in card YAML
 ```
 
 
-# Config examples
+# CARD YAML EXAMPLES:
 
 ## SIMPLE CARD WITH IMAGE ONLY
+uploaded:
 ```
-// uploaded
 type: custom:interactive-image-card
-url: /api/image/serve/6c4545bfb376ad54ba9a163267edc8f4/512x512
+url: /api/image/serve/6c47edc8f4545bfb376ad54ba9a16326/512x512
 label: Living room
-
-// linked
+```
+linked:
+```
 type: custom:interactive-image-card
 url: https://design.home-assistant.io/images/brand/logo.png
 label: HA logo
 ```
 
-## CARD WITH IMAGE AND INTERACTIVE AREA
-### uploaded image with interactive area
+## CARD WITH IMAGE AND INTERACTIVE AREAS
+uploaded image with interactive area:
 ```
 type: custom:interactive-image-card
-url: /api/image/serve/6c4545bfb376ad54ba9a163267edc8f4/512x512
+url: /api/image/serve/6c47edc8f4545bfb376ad54ba9a16326/512x512
 label: Living room
 size: 400
 editable: true
@@ -140,7 +151,8 @@ interactive_areas:
         - 255
       brightness_pct: 35
 ```
-### dynamic vacuum map with interactive area
+
+dynamic vacuum map with interactive area:
 ```
 type: custom:interactive-image-card
 entity_picture: image.optimus_prime_map
@@ -155,10 +167,10 @@ interactive_areas:
     points: 213,153,217,178,238,175,242,156
 ```
 
-### camera stream with interactive area
+camera stream with interactive area:
 ```
-// service and service data are editable only in YAML for this kind of card 
-// points can be added with any other entity and service and updated manually later on
+// ptz service and service data can be added only in YAML
+
 type: custom:interactive-image-card
 label: camera 
 editable: true
@@ -200,3 +212,30 @@ interactive_areas:
       distance: 0.5
 
 ```
+
+## VISUAL EXAMPLES:
+
+### Simple image card, editable: false
+![Capture9](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/307084dc-83fc-4450-a3ee-4363c9745680)
+
+### Image card with clickable interactive area (red coloured)
+![Capture2](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/1ed77c01-9489-49f9-8ce0-f0a642103b53)
+* toggle-switch icon - hide/show areas
+* pencil icon - open interactive image maker
+
+### Interactive image maker - show/hide existing area
+![Capture3](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/b06c76a7-f8dc-4b70-8c24-4400367d754e)
+
+![Capture4](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/973885d6-6436-4ba3-a0c7-aee86416ad0a)
+* when there are multiple interactive areas, this feature is useful for easily identifying the corresponding actions on the image
+
+### Interactive image maker - add new area
+![Capture5](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/d4f2b7ba-8d9b-4335-8ef6-e8454bcb8129)
+* draw mode - draw on image, add entity and service (service input is hidden if no valid entity is selected)
+* tryout mode - try your config right away before saving, image becomes clickable
+
+### Areas are visible on image card
+![Capture6](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/ab394933-b603-45cc-8706-38ffacc390c9)
+
+### Areas are visible in existing tab
+![Capture7](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/8dfc9b33-828d-473f-9e0c-322dc3453537)
