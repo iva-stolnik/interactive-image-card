@@ -9,7 +9,7 @@
   * copy code from **/src/** to **/config/www/your-directory** 
   * add resource to dashboard 
     ```
-    /local/your-directory/interactive-image-maker.js
+    /local/your-directory/main.js
     ```
   * add interactive-image-card to dashboard 
   * YAML editing works good
