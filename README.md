@@ -15,7 +15,9 @@
   * add interactive-image-card to dashboard 
 
 ## CARD EXAMPLE IN LOVELACE DASHBOARD
-![Capture8](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/19e7713a-d995-4c05-b6b9-ee76614d8384)
+<div align="center">
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/19e7713a-d995-4c05-b6b9-ee76614d8384" alt="Capture8"/>
+</div>
 
 ## FEATURES
 * UPLOAD or LINK EXTERNAL image
@@ -213,29 +215,45 @@ interactive_areas:
 
 ```
 
-## VISUAL EXAMPLES:
+<div align="center">
+  <h2>Simple image card, editable: false</h2>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/307084dc-83fc-4450-a3ee-4363c9745680" alt="Capture9"/>
+</div>
 
-### Simple image card, editable: false
-![Capture9](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/307084dc-83fc-4450-a3ee-4363c9745680)
+<div align="center">
+  <h2>Image card with clickable interactive area (red coloured)</h2>
+  <div>
+    <p>toggle-switch icon - hide/show areas</p>
+    <p>pencil icon - open interactive image maker</p>
+  </div>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/1ed77c01-9489-49f9-8ce0-f0a642103b53" alt="Capture2"/>
+</div>
 
-### Image card with clickable interactive area (red coloured)
-![Capture2](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/1ed77c01-9489-49f9-8ce0-f0a642103b53)
-* toggle-switch icon - hide/show areas
-* pencil icon - open interactive image maker
+<div align="center">
+  <h2>Interactive image maker - show/hide existing area</h2>
+  <div>
+    <p>when there are multiple interactive areas, this feature is useful for easily identifying the corresponding actions on the image</p>
+  </div>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/b06c76a7-f8dc-4b70-8c24-4400367d754e" alt="Capture3"/>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/973885d6-6436-4ba3-a0c7-aee86416ad0a" alt="Capture4"/>
+</div>
 
-### Interactive image maker - show/hide existing area
-![Capture3](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/b06c76a7-f8dc-4b70-8c24-4400367d754e)
+<div align="center">
+  <h2>Interactive image maker - add new area</h2>
+  <div>
+    <p>draw mode - draw on image, add entity and service (service input is hidden if no valid entity is selected)</p>
+    <p>tryout mode - try your config right away before saving, image becomes clickable</p>>
+  </div>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/d4f2b7ba-8d9b-4335-8ef6-e8454bcb8129" alt="Capture5"/>
+</div>
 
-![Capture4](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/973885d6-6436-4ba3-a0c7-aee86416ad0a)
-* when there are multiple interactive areas, this feature is useful for easily identifying the corresponding actions on the image
 
-### Interactive image maker - add new area
-![Capture5](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/d4f2b7ba-8d9b-4335-8ef6-e8454bcb8129)
-* draw mode - draw on image, add entity and service (service input is hidden if no valid entity is selected)
-* tryout mode - try your config right away before saving, image becomes clickable
+<div align="center">
+  <h2>Areas are visible on image card</h2>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/ab394933-b603-45cc-8706-38ffacc390c9" alt="Capture6"/>
+</div>
 
-### Areas are visible on image card
-![Capture6](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/ab394933-b603-45cc-8706-38ffacc390c9)
-
-### Areas are visible in existing tab
-![Capture7](https://github.com/iva-stolnik/interactive-image-card/assets/30315220/8dfc9b33-828d-473f-9e0c-322dc3453537)
+<div align="center">
+  <h2>Areas are visible in existing tab</h2>
+  <img src="https://github.com/iva-stolnik/interactive-image-card/assets/30315220/8dfc9b33-828d-473f-9e0c-322dc3453537" alt="Capture7"/>
+</div>
