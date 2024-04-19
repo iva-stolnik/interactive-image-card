@@ -6,7 +6,7 @@
 
 
 # interactive maker is still in development phase!!! but feel free to try it 
-  * add through HACS or, 
+  * add through HACS as custom repo or, 
   * copy code from **/src/** to **/config/www/your-directory** 
   * add resource to dashboard 
     ```
