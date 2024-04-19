@@ -1309,6 +1309,7 @@ class InteractiveImage extends LitElement {
     .existing-point-selected {
         background: var(--primary-color);
         color: var(--text-primary-color);
+        margin: auto;
     }
 
     .confirmation-modal{
