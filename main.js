@@ -346,6 +346,7 @@
         display:flex;
         width: 300px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .existing-actions {
@@ -380,7 +381,6 @@
     .existing-point-selected {
         background: var(--primary-color);
         color: var(--text-primary-color);
-        margin: auto;
     }
 
     .confirmation-modal{
