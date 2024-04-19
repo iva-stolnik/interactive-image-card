@@ -1,5 +1,5 @@
-import './cards/video-stream.js'; 
-import './cards/canvas.js'; 
+import './custom_components/cards/video-stream.js'; 
+import './custom_components/cards/canvas.js'; 
 
 const LitElement =
     window.LitElement ||
