@@ -1,6 +1,6 @@
 {
   "name": "Interactive image card",
   "render_readme": true,
-  "filename": "/dist/main.js",
+  "filename": "main.js",
   "content_in_root": false
 }
