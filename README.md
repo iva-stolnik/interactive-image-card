@@ -50,7 +50,7 @@ A custom card for Home Assistant Lovelace dashboard
 
 ## ADD CARD TO HA
   * add through HACS as custom repo or, 
-  * copy code from `dist/main.js` to Home Assistant `/config/www/your-directory/main.js` 
+  * copy code from `main.js` to Home Assistant `/config/www/your-directory/main.js` 
     * add resource to dashboard
       * resource type: JavaScript module
       * url: `/local/your-directory/main.js`
