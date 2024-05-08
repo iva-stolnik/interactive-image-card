@@ -54,6 +54,34 @@ class VueCustomCard extends HTMLElement {
     }
 }
 
+
+(window as any).customCards = (window as any).customCards || [];
+
+if((window as any).customCards.length)
+{
+    let found = false;
+    for (const item of (window as any).customCards)
+    {
+        if(item.type === 'interactive-image-card')
+        {
+            found = true;
+            break;
+        }
+    }
+    if(!found)
+    {
+        (window as any).customCards.push({
+            type: 'interactive-image-card',
+            name: 'Interactive Image Card',
+            preview: true,
+            description: 'Interactive image card for Home Assistant made by Iva Stolnik',
+        });
+    }
+}
+
+
+
 if (!customElements.get('interactive-image-card')) {
+    
     customElements.define('interactive-image-card', VueCustomCard);
 }
